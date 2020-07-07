@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GradeBook
 {
@@ -7,52 +6,42 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            // Welcome message
-            if (args.Length != 0)
-            {
-                Console.WriteLine($"Hello, {args[0]}!");
-            }
-            else
-            {
-                Console.WriteLine("Hello stranger :D");
-            }
 
+            // Creates a book object
+            var book = new Book();
 
-            // Data references
-            double total = 0;
-            double mean = 0;
-            List<double> grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 };
-            grades.Add(56.1);
-
-
-            // Generate the total of the grades
-            foreach (var number in grades)
-            {
-                total += number;
-            }
-
-            // Calculates the avergage (total of the group of items / length of the items)
-            mean = total / grades.Count;
-
-            // Outputs the total
-            Console.WriteLine(total);
+            // Adds the grades to the Book's grades List
+            book.AddGrade(56.1);
+            book.AddGrade(89.1);
+            book.AddGrade(90.5);
+            book.AddGrade(60);
 
             /*
 
-            Formatting outputs notes:
+              Formatting outputs notes:
 
-            Resources:
-            - https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
+              Resources:
+              - https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
 
-            Formatting options:
+              Formatting options:
 
-            - Math.round(yourValue, MidpointRounding.AwayFromZero)
+              - Math.round(yourValue, MidpointRounding.AwayFromZero)
 
-            - yourValue.toString("N") - N, N[Number of decimal places e.g. 2, 4, 10 etc]
+              - yourValue.toString("N") - N, N[Number of decimal places e.g. 2, 4, 10 etc]
 
             */
-            Console.WriteLine(Math.Round(mean, 2, MidpointRounding.AwayFromZero));
-            Console.WriteLine(mean.ToString("N"));
+
+            double total = book.getTotal();
+            Console.WriteLine($"The total for the grades are {total}");
+
+            double average = book.getAverage(total);
+            Console.WriteLine($"The average grade is {average.ToString("N2")}");
+
+            double lowestValue = book.getLowestGrade();
+            Console.WriteLine($"The lowest grade is {lowestValue}");
+
+            double highestGrade = book.getHighestGrade();
+            Console.WriteLine($"The highest grade is {highestGrade}");
         }
     }
 }
