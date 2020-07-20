@@ -10,6 +10,10 @@ namespace GradeBook
             // Creates a book object with a unique id
             var book = new Book("Grade");
 
+            // Setups up the subscription to the event delegates (Event Listeners, think of this as the socket.io connected message)
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAddedError += OnGradeAddedError;
+
             // Constantly loops until q is typed
             while(true) {
 
@@ -39,11 +43,6 @@ namespace GradeBook
                 // Checks for expections which haven't been accounted for 
                 catch(Exception ex) {
                     Console.WriteLine(ex.Message);
-                }
-
-                // Will always run, even if the grade is successfully added
-                finally {
-                    Console.WriteLine("Will execute regardless.........");
                 }
             }
 
@@ -80,6 +79,14 @@ namespace GradeBook
             double highestGrade = book.GetHighestGrade();
             Console.WriteLine($"The highest grade is {highestGrade}");
             }
+        }
+
+        static void OnGradeAdded(object sender, EventArgs e) {
+            Console.WriteLine("A grade has been added to the system");   
+        }
+
+        static void OnGradeAddedError(object sender, EventArgs e) {
+            Console.WriteLine("An error occurred");
         }
     }
 }

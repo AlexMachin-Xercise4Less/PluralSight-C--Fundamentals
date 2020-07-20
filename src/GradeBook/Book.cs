@@ -3,6 +3,12 @@ using System;
 
 namespace GradeBook
 {
+
+    // An event - notification
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+    public delegate void GradeAddedDelegateException(object sender, EventArgs args);
+
     public class Book
     {
         // Creates the Book's private fields
@@ -23,12 +29,39 @@ namespace GradeBook
             if(grade >= 0 && grade <= 100) {
                 // Pushes the item to the grades array
                 grades.Add(grade);
+
+                // When the programme is listening set a notification (Triggers success message)
+                // book.GradeAdded += OnGradeAdded (Must be a static method as the program.cs main is a static member)
+                if(GradeAdded != null) {
+                    GradeAdded(this, new EventArgs());
+                }
+
             } else {
+
+                // When the programme is listening and an error has occurred send a notification (Triggers error message)
+                // book.GradeAddedError += OnGradeAddedError (Must be a static method as the program.cs main is a static member)
+                if(GradeAddedError != null) {
+                    GradeAddedError(this, new EventArgs());
+                }
 
                 // Throws an ArgumentException (Will be caught by the try/catch block in Progam.cs)
                 throw new ArgumentException("Invalid Grade: Please enter a grade between 0 and 100");
             }
-        }
+        } 
+
+        /* 
+        
+        Event delegate event setups
+        
+        - event keyword adds restrictions and extra capabilities (Will be continued in the OOP section )
+
+        */
+
+        // Setup an Success event
+        public event GradeAddedDelegate GradeAdded;
+
+        // Setup an Error event
+        public event GradeAddedDelegateException GradeAddedError;
 
         public double GetTotal()
         {
