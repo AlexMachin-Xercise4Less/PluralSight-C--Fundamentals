@@ -65,7 +65,9 @@ namespace GradeBook
 
             */
 
-            
+
+            Console.WriteLine(book.Name);
+
             double total = book.GetTotal();
             Console.WriteLine($"The total for the grades are {total}");
 

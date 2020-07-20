@@ -5,10 +5,11 @@ namespace GradeBook
 {
     public class Book
     {
-
         // Creates the Book's private fields
         private List<double> grades;
-        public string Name;
+        // public string Name;
+
+        public string Name { get; set; }
 
         // Initializes the class variables
         public Book(string name)
@@ -52,7 +53,7 @@ namespace GradeBook
             return average;
         }
 
-        public void AddLetterGrade(char letter) 
+        public void AddGrade(char letter) 
         {
             switch(letter) {
                 case 'A':

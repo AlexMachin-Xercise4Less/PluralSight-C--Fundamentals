@@ -59,8 +59,8 @@ namespace GradeBook.Tests
         {
             // Arrange
             var book = new Book("Grade book");
-            book.AddLetterGrade('A');
-            book.AddLetterGrade('C');
+            book.AddGrade('A');
+            book.AddGrade('C');
 
             // Act
             double total = book.GetTotal();
