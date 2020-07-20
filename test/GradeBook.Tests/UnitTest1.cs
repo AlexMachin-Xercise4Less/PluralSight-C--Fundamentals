@@ -55,6 +55,23 @@ namespace GradeBook.Tests
         }
 
         [Fact]
+        public void AddGradeWithLetter()
+        {
+            // Arrange
+            var book = new Book("Grade book");
+            book.AddLetterGrade('A');
+            book.AddLetterGrade('C');
+
+            // Act
+            double total = book.GetTotal();
+            double actual = book.GetAverage(total);
+
+            // Assert
+            Assert.Equal(80, actual);
+            
+        }
+
+        [Fact]
         public void AddGrade() 
         {
             // Arrange

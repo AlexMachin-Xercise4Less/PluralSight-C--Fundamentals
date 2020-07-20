@@ -7,15 +7,49 @@ namespace GradeBook
         static void Main(string[] args)
         {
 
-            // Creates a book object
+            // Creates a book object with a unique id
             var book = new Book("Grade");
 
-            // Adds the grades to the Book's grades List
-            book.AddGrade(56.1);
-            book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(60);
+            // Constantly loops until q is typed
+            while(true) {
 
+                // Print out a user message
+                Console.WriteLine("Enter the grade or 'q' to quite");
+                
+                // Reads the users console input
+                var input = Console.ReadLine();
+
+                // Exits the programme flow
+                if(input == "q") 
+                {
+                    break;
+                }
+
+                // When an error occurs it throes an error to one of the catch blocks defined below
+                try {
+                    var grade = double.Parse(input);                
+                    book.AddGrade(grade);
+                }
+
+                // Checks for a formatting exception (Formatting error e.g. ffggsasdsa or qwqeqqeq)
+                catch(FormatException ex) {
+                   Console.WriteLine(ex.Message);
+                } 
+
+                // Checks for expections which haven't been accounted for 
+                catch(Exception ex) {
+                    Console.WriteLine(ex.Message);
+                }
+
+                // Will always run, even if the grade is successfully added
+                finally {
+                    Console.WriteLine("Will execute regardless.........");
+                }
+            }
+
+
+            // When the total is not 0 print out the results
+            if(book.GetTotal() != 0) {
             /*
 
               Formatting outputs notes:
@@ -31,6 +65,7 @@ namespace GradeBook
 
             */
 
+            
             double total = book.GetTotal();
             Console.WriteLine($"The total for the grades are {total}");
 
@@ -42,6 +77,7 @@ namespace GradeBook
 
             double highestGrade = book.GetHighestGrade();
             Console.WriteLine($"The highest grade is {highestGrade}");
+            }
         }
     }
 }
