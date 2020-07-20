@@ -8,7 +8,7 @@ namespace GradeBook
         {
 
             // Creates a book object
-            var book = new Book();
+            var book = new Book("Grade");
 
             // Adds the grades to the Book's grades List
             book.AddGrade(56.1);
@@ -31,16 +31,16 @@ namespace GradeBook
 
             */
 
-            double total = book.getTotal();
+            double total = book.GetTotal();
             Console.WriteLine($"The total for the grades are {total}");
 
-            double average = book.getAverage(total);
+            double average = book.GetAverage(total);
             Console.WriteLine($"The average grade is {average.ToString("N2")}");
 
-            double lowestValue = book.getLowestGrade();
+            double lowestValue = book.GetLowestGrade();
             Console.WriteLine($"The lowest grade is {lowestValue}");
 
-            double highestGrade = book.getHighestGrade();
+            double highestGrade = book.GetHighestGrade();
             Console.WriteLine($"The highest grade is {highestGrade}");
         }
     }

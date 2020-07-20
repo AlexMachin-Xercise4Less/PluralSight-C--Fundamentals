@@ -8,11 +8,13 @@ namespace GradeBook
 
         // Creates the Book's private fields
         private List<double> grades;
+        public string Name;
 
         // Initializes the class variables
-        public Book()
+        public Book(string name)
         {
             grades = new List<double>() { };
+            Name = name;
         }
 
         public void AddGrade(double grade)
@@ -21,7 +23,7 @@ namespace GradeBook
             grades.Add(grade);
         }
 
-        public double getTotal()
+        public double GetTotal()
         {
             double total = 0;
 
@@ -35,7 +37,7 @@ namespace GradeBook
             return total;
         }
 
-        public double getAverage(double total)
+        public double GetAverage(double total)
         {
             // total number of items / count
             double average = total / grades.Count;
@@ -44,7 +46,7 @@ namespace GradeBook
             return average;
         }
 
-        public double getHighestGrade()
+        public double GetHighestGrade()
         {
             // Gets the lowest precision double value possible
             var highestGrade = double.MinValue;
@@ -63,7 +65,7 @@ namespace GradeBook
             return highestGrade;
         }
 
-        public double getLowestGrade()
+        public double GetLowestGrade()
         {
             // Gets the highest precision double value possible
             var lowestGrade = double.MaxValue;

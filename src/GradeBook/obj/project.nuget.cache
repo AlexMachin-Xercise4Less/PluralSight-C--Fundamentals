@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wMsTwiPOEn6O+FnFnbs3z079iGn/HmoUe9HT46+Oc0pl23c1HOYruD5AQytEHaJvXmfCwvH6avv92PoM2XZubA==",
+  "dgSpecHash": "bQ/d7WtwtBF25NmXuuOxtaya6aCS1pEjfjMuARIt/tFjF/wsfMVrhpRlfIm/k9KOg1mUIJYmgFFjeV/nTrKRjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\GradeBook.csproj",
+  "projectFilePath": "C:\\Users\\alex.machin\\Desktop\\GradeBook\\src\\GradeBook\\GradeBook.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

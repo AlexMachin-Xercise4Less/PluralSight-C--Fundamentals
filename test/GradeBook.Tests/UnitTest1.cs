@@ -26,13 +26,13 @@ namespace GradeBook.Tests
         public void LowestGrade()
         {
             // Arrange
-            var book = new Book();
+            var book = new Book("Grade");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(77.3);
 
             // Act
-            var expect = book.getLowestGrade();
+            var expect = book.GetLowestGrade();
     
             //Assert
             Assert.Equal(77.3, expect);
@@ -42,13 +42,13 @@ namespace GradeBook.Tests
         public void HighestGrade()
         {
             // Arrange
-            var book = new Book();
+            var book = new Book("Grade");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(77.3);
 
             // Act
-            var expect = book.getHighestGrade();
+            var expect = book.GetHighestGrade();
     
             //Assert
             Assert.Equal(90.5, expect);
@@ -58,11 +58,11 @@ namespace GradeBook.Tests
         public void AddGrade() 
         {
             // Arrange
-            var book = new Book();
+            var book = new Book("Grade");
             book.AddGrade(10);
 
             // Act
-            var expect = book.getTotal();
+            var expect = book.GetTotal();
 
             // Assert
             Assert.Equal(10, expect);
@@ -72,15 +72,15 @@ namespace GradeBook.Tests
         public void GetAverage()
         {
             // Arrange
-            var book = new Book();
+            var book = new Book("Grade");
             book.AddGrade(56.1);
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(60);
 
             // Act
-            double total = book.getTotal();
-            double expect = book.getAverage(total);
+            double total = book.GetTotal();
+            double expect = book.GetAverage(total);
 
             // Assert
             Assert.Equal(73.9, expect, 1);
