@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alex.machin\\Desktop\\gradebook\\src\\GradeBook\\GradeBook.csproj": {}
+    "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\GradeBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alex.machin\\Desktop\\gradebook\\src\\GradeBook\\GradeBook.csproj": {
+    "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\GradeBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alex.machin\\Desktop\\gradebook\\src\\GradeBook\\GradeBook.csproj",
+        "projectUniqueName": "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\GradeBook.csproj",
         "projectName": "GradeBook",
-        "projectPath": "C:\\Users\\alex.machin\\Desktop\\gradebook\\src\\GradeBook\\GradeBook.csproj",
+        "projectPath": "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\GradeBook.csproj",
         "packagesPath": "C:\\Users\\alex.machin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alex.machin\\Desktop\\gradebook\\src\\GradeBook\\obj\\",
+        "outputPath": "C:\\Users\\alex.machin\\Desktop\\PluralSight-CSharp-Fundamentals\\src\\GradeBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

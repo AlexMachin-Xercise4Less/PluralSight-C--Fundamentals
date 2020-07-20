@@ -3,7 +3,7 @@ using System;
 
 namespace GradeBook
 {
-    class Book
+    public class Book
     {
 
         // Creates the Book's private fields
